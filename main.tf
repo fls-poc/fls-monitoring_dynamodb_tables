@@ -1,8 +1,8 @@
 data "aws_partition" "this" {}
 
 locals {
-  table_name = "${var.context}-${var.account_name}-dynamodb"
-  role_name  = "${var.context}-${var.account_name}-role"
+  table_name = "${var.account_id}${var.table_name_postfix}"
+  role_name  = "${var.account_id}${var.table_name_postfix}-role"
 
   role_arn_param_path           = "/${var.context}/fls/monitoring/dynamodb/${var.account_id}/role_arn"
   role_arn_param_description    = "Role arn for lambda to assume"
