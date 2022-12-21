@@ -83,3 +83,7 @@ variable "account_name" {
   type = string
   default = ""
 }
+
+variable "table_name_postfix" {
+  type = string  
+}
